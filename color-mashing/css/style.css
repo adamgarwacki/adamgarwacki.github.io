@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    margin: 0px;
+}
+
+/* Główne: */
+#main-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.2s;
+}
+
+.main-title {
+    margin: 0rem;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.main-element {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: 50vh;
+    left: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panel-container {
+    transform: translate(-125%, -50%);
+}
+
+.panel-container div {
+    height: 150px;
+    width: 150px;
+    transition: all 0.2s;
+}
+
+.panel-container div:hover {
+    z-index: 1;
+    box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.heading {
+    transform: translate(25%, -50%);
+    align-items: center;
+}
+
+/* Panel colors */
+#red-panel {
+    background-color: rgb(255, 0, 0);
+}
+
+#green-panel {
+    background-color: rgb(0, 128, 0);
+}
+
+#blue-panel {
+    background-color: rgb(0, 0, 255);
+}
+
+#yellow-panel {
+    background-color: rgb(255, 255, 0);
+}
+
+#white-panel {
+    background-color: rgb(255, 255, 255);
+}
+
+#white-panel > p {
+    margin: 0px;
+    line-height: 150px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #acacac;
+    opacity: 0;
+}
+
+#white-panel > p:hover {
+    opacity: 1;
+}
+
+#pink-panel {
+    background-color: rgb(255, 192, 203);
+}
+
+#lightblue-panel {
+    background-color: rgb(173, 216, 230);
+}
+
+#purple-panel {
+    background-color: rgb(128, 0, 128);
+}
+
+#orange-panel {
+    background-color: rgb(255, 165, 0);
+}
+
+/* RWD */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 2.5em;
+    }
+
+    .main-element {
+        width: 300px;
+        height: 300px;
+    }
+
+    .panel-container div {
+        width: 100px;
+        height: 100px;
+    }
+
+    #white-panel > p {
+        line-height: 100px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .panel-container {
+        transform: translate(-50%, -20%);
+    }
+
+    .heading {
+        transform: translate(-50%, -120%);
+        align-items: center;
+    }
+}
