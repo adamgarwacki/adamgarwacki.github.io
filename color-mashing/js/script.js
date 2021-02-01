@@ -13,7 +13,7 @@ let mashBackgroundColor = (redColor, greenColor, blueColor) => {
 
     initialBGColor.blueBGColor = Math.floor((initialBGColor.blueBGColor + blueColor) / 2);
 
-    document.getElementById('main-container').style = `background-color: rgb(${initialBGColor.redBGColor}, ${initialBGColor.greenBGColor}, ${initialBGColor.blueBGColor});`;
+    document.getElementById('body').style = `background-color: rgb(${initialBGColor.redBGColor}, ${initialBGColor.greenBGColor}, ${initialBGColor.blueBGColor});`;
     console.log(initialBGColor);
 }
 
@@ -38,7 +38,7 @@ document.getElementById('white-panel').addEventListener('click', () => {
     initialBGColor.greenBGColor = 255;
     initialBGColor.blueBGColor = 255;
 
-    document.getElementById('main-container').style = `background-color: rgb (255, 255, 255)`;
+    document.getElementById('body').style = `background-color: rgb (255, 255, 255)`;
 });
 
 document.getElementById('pink-panel').addEventListener('click', () => {
