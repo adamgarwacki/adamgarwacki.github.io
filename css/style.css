@@ -2,16 +2,38 @@
     font-family: Arial, Helvetica, sans-serif;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
+    color: #D4AF37;
+}
+
+body {
+    background-color: #000d1f;
 }
 
 /* Ogólne rulesety */
 .section {
     margin: 60px 0px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .heading {
+    position: relative;
+    margin: 12px auto;
+    padding: 0.5em;
+    font-family: 'Merienda', cursive;
     text-align: center;
-    padding-bottom: 2em;
+}
+
+.heading::after {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: 5px auto;
+    top: 0px;
+    left: 0px;
 }
 
 .text-content {
@@ -22,11 +44,11 @@
 
 .header {
     position: relative;
-    height: 100vh;
     margin-top: 0px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+}
+
+.introduction {
+    background-color: #fffbcb;
 }
 
 /* CHMURY W NAGŁÓWKU */
@@ -42,36 +64,41 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 .cloud {
     position: absolute;
     width: 100%;
-    stroke: #000;
-    fill: #000;
+    max-width: 724px;
+    stroke: #FFFEF3;
+    fill: #FFFEF3;
     opacity: 0.8;
+}
+
+.small-cloud {
+    max-width: 300px;
+    opacity: 0.3;
 }
 
 .cloud-1 {
     bottom: 7%;
     left: -15%;
-    opacity: 0.8;
 }
 
 .cloud-2 {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    right: -35%;
-    top: 55%;
-    opacity: 0.8;
+    width: 60%;
+    right: -25%;
+    bottom: 30%;
 }
 
 .cloud-3 {
     width: 70%;
-    top: 15%;
+    max-width: 700px;
+    top: 12%;
     left: -10%;
 }
 
 .cloud-4 {
     width: 25%;
-    top: 50%;
+    top: 55%;
     left: 5%;
-    opacity: 0.3;
 }
 
 .cloud-5 {
@@ -80,9 +107,34 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     width: 20%;
     top: 10%;
     right: 12%;
-    opacity: 0.3;
 }
 
-.heading-main {
-    /* font-family: Arial, Helvetica, sans-serif; */
+
+/* RWD */
+@media (min-width: 992px) {
+    .heading-main {
+        font-size: 2.5em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .cloud-1 {
+        left: -5%;
+    }
+
+    .cloud-2 {
+        right: -15%;
+    }
+
+    .cloud-3 {
+        left: -5%;
+    }
+
+    .cloud-4 {
+        left: 25%;
+    }
+
+    .cloud-5 {
+        right: 24%;
+    }
 }
