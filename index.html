@@ -15,12 +15,16 @@
 </head>
 
 <body>
-    <header id="header" class="section header">
+    <div id="loading-screen" class="loading-screen">
+        <canvas id="loading-screen-canvas"></canvas>
+    </div>
+
+    <header id="sec-1" class="section header">
         <h1 class="heading heading-main">Cześć, tu Adam</h1>
         <div id="cloud-box" class="cloud-box">
             <svg class="cloud cloud-1" viewBox="0 0 164.934 46.507">
                 <path
-                d="M72.568 160.126v-23.252H49.316v.274A11.359 11.359 0 0160.54 148.5a11.359 11.359 0 01-11.225 11.354v.272zm.13-23.252v23.252h23.251v-.274A11.359 11.359 0 0184.724 148.5a11.359 11.359 0 0111.225-11.354v-.272zM-29.92 116.595V93.343h-23.252v.274a11.359 11.359 0 0111.225 11.352 11.359 11.359 0 01-11.225 11.355v.271zm.13-23.252v23.252h23.252v-.274a11.359 11.359 0 01-11.225-11.352A11.359 11.359 0 01-6.538 93.615v-.272zm-127.24-28.632H92.836c7.62 0 13.754 6.495 13.754 14.561 0 8.067-6.134 14.562-13.754 14.562h-249.864c-7.62 0-13.754-6.495-13.754-14.562 0-8.066 6.134-14.56 13.754-14.56zm46.03 51.394h311.017c5.563 0 10.04 4.74 10.04 10.63 0 5.889-4.477 10.63-10.04 10.63h-311.016c-5.563 0-10.041-4.741-10.041-10.63 0-5.89 4.478-10.63 10.04-10.63zm82.963 43.53H178.12c3.98 0 7.184 3.393 7.184 7.606 0 4.214-3.204 7.606-7.184 7.606H-28.037c-3.98 0-7.184-3.392-7.184-7.606 0-4.213 3.204-7.606 7.184-7.606z"
+                    d="M72.568 160.126v-23.252H49.316v.274A11.359 11.359 0 0160.54 148.5a11.359 11.359 0 01-11.225 11.354v.272zm.13-23.252v23.252h23.251v-.274A11.359 11.359 0 0184.724 148.5a11.359 11.359 0 0111.225-11.354v-.272zM-29.92 116.595V93.343h-23.252v.274a11.359 11.359 0 0111.225 11.352 11.359 11.359 0 01-11.225 11.355v.271zm.13-23.252v23.252h23.252v-.274a11.359 11.359 0 01-11.225-11.352A11.359 11.359 0 01-6.538 93.615v-.272zm-127.24-28.632H92.836c7.62 0 13.754 6.495 13.754 14.561 0 8.067-6.134 14.562-13.754 14.562h-249.864c-7.62 0-13.754-6.495-13.754-14.562 0-8.066 6.134-14.56 13.754-14.56zm46.03 51.394h311.017c5.563 0 10.04 4.74 10.04 10.63 0 5.889-4.477 10.63-10.04 10.63h-311.016c-5.563 0-10.041-4.741-10.041-10.63 0-5.89 4.478-10.63 10.04-10.63zm82.963 43.53H178.12c3.98 0 7.184 3.393 7.184 7.606 0 4.214-3.204 7.606-7.184 7.606H-28.037c-3.98 0-7.184-3.392-7.184-7.606 0-4.213 3.204-7.606 7.184-7.606z"
                     stroke-width="2" transform="matrix(.42783 0 0 .40411 74.066 -25.15)" />
             </svg>
 
@@ -50,14 +54,51 @@
             </svg>
 
         </div>
+
+        <!-- Numer panelu podaję jako argument funkcji, która wyświetli odpowiedni panel; wiele przycisków, jedna funkcja! -->
+        <button id="page-down" class="btn btn-page-down" onclick="changePanel(1, 2)">
+            down
+        </button>
     </header>
 
-    <section id="introduction" class="section introduction">
+    <section id="sec-2" class="section introduction">
+        <button id="page-up" class="btn btn-page-up" onclick="changePanel(2, 1)">
+            up
+        </button>
+
         <h2 class="heading heading-sub">Czym się zajmuję?</h2>
-        <p class="text-content">Buduję proste strony internetowe oraz aplikacje wykorzystując HTML, CSS, JavaScript. Obecnie szukam zatrudnienia jako Front End Developer.</p>
+        <div class="introduction-content">
+            <p class="text-content">Buduję proste strony internetowe oraz aplikacje wykorzystując HTML, CSS, JavaScript.
+                Obecnie szukam zatrudnienia jako Front End Developer.</p>
+            <div class="lampion-container">
+                <div class="lamion-html">
+
+                    <i class="fab fa-html5"></i>
+                </div>
+
+                <div class="lampion-css">
+
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+
+                <svg class="lampion-js" viewBox="0 0 103.365 161.803">
+                    <path
+                        d="M122.46 152.534c1.061 20.873-7.759 31.296-7.759 31.296m2.448-31.328c-.76 20.885-10.455 30.5-10.455 30.5m6.28-30.524c-4.376 20.436-15.593 28.221-15.593 28.221m30.299-28.87c-1.062 20.871 7.757 31.295 7.757 31.295m-2.447-31.328c.76 20.885 10.455 30.5 10.455 30.5m-6.28-30.524c4.376 20.435 15.593 28.221 15.593 28.221M113.763 40.942a11.307 17.507 0 015.653-15.161 11.307 17.507 0 0111.307 0 11.307 17.507 0 015.653 15.161h-11.307zm27.05 104.274h-31.488v7.262h31.488zm-.246-104.274h-30.996v7.262h30.996zm-28.651 103.634a54.12 47.866 0 00-54.12-47.866m80.427 47.866a54.12 47.866 0 0154.12-47.866m-80.427-47.866a54.12 47.866 0 01-54.12 47.866m80.427-47.866a54.12 47.866 0 0054.12 47.866"
+                        transform="matrix(-.76824 0 0 1 147.766 -22.58)" />
+                </svg>
+            </div>
+        </div>
+
+        <button id="page-down" class="btn btn-page-down" onclick="changePanel(2, 3)">
+            down
+        </button>
     </section>
 
-    <section id="about" class="section">
+    <section id="sec-3" class="section">
+        <button id="page-up" class="btn btn-page-up" onclick="changePanel(3, 2)">
+            up
+        </button>
+
         <h2 class="heading heading-sub">Informacje o mnie:</h2>
         <div>
             <h3 class="heading">Umiejętności</h3>
@@ -73,14 +114,30 @@
             <h3 class="heading">Hobby</h3>
             <p class="text-content">Żeglarstwo, fantastyka, gry fabularne<p>
         </div>
+
+        <button id="page-down" class="btn btn-page-down" onclick="changePanel(3, 4)">
+            down
+        </button>
     </section>
 
-    <section id="projects" class="section">
+    <section id="sec-4" class="section">
+        <button id="page-up" class="btn btn-page-up" onclick="changePanel(4, 3)">
+            up
+        </button>
+
         <h2 class="heading heading-sub">Co dotychczas stworzyłem?</h2>
         <p class="text-content">Color-mash, apka do Iskry, kilka generic projektów</p>
+
+        <button id="page-down" class="btn btn-page-down" onclick="changePanel(4, 5)">
+            down
+        </button>
     </section>
 
-    <section id="contact" class="section">
+    <section id="sec-5" class="section">
+        <button id="page-up" class="btn btn-page-up" onclick="changePanel(5, 4)">
+            up
+        </button>
+
         <h2 class="heading heading-sub">Kontakt</h2>
         <p class="text-content">form</p>
     </section>
