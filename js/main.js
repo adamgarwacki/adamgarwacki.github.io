@@ -76,7 +76,7 @@ let drawFan = () => {
     ctx.arc(0, -topHeight, topWidth, 0, Math.PI, true);
     ctx.lineTo(-baseWidth, -baseHeight);
     ctx.closePath();
-    ctx.fillStyle = '#e33b3b';
+    ctx.fillStyle = '#e34b4b';
     ctx.fill();
     ctx.strokeStyle = '#fff';
     ctx.lineWidth = lineSize;
@@ -193,17 +193,47 @@ window.addEventListener('scroll', () => {
 // Przejścia między kartami:
 
 let changePanel = (currNum, nextNum) => {
+    console.log(currNum);
     let currentPanel = document.getElementById(`sec-${currNum}`);
     let nextPanel = document.getElementById(`sec-${nextNum}`);
 
     if (nextNum > currNum) {
         currentPanel.classList.add('slide-up');
-        setTimeout(() => nextPanel.classList.remove('slide-down'), 1200);
+        setTimeout(() => nextPanel.classList.remove('slide-down'), 1000);
         // console.log('neeext');
     } else {
         currentPanel.classList.add('slide-down');
-        setTimeout(() => nextPanel.classList.remove('slide-up'), 1200);
+        setTimeout(() => nextPanel.classList.remove('slide-up'), 1000);
         // console.log('baaack');
+    }
+
+    switch (currNum) {
+        case 1:
+            let cloudBox = document.getElementById('cloud-box');
+            cloudBox.classList.add('cloud-box-split');
+            setTimeout(() => {
+                cloudBox.classList.remove('cloud-box-split');
+            }, 1000);
+            break;
+            
+        case 2:
+
+            break;
+            
+        case 3:
+            
+            break;
+            
+        case 4:
+            
+            break;
+            
+        case 5:
+            
+            break;
+
+        default:
+            break;
     }
 
     sessionStorage.setItem('previousPageNum', nextNum);

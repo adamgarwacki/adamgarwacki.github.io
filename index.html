@@ -57,46 +57,69 @@
 
         <!-- Numer panelu podaję jako argument funkcji, która wyświetli odpowiedni panel; wiele przycisków, jedna funkcja! -->
         <button id="page-down" class="btn btn-page-down" onclick="changePanel(1, 2)">
-            down
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="10" x2="200" y2="140"></line>
+                <line x1="200" y1="140" x2="390" y2="10"></line>
+            </svg>
         </button>
     </header>
 
     <section id="sec-2" class="section introduction">
         <button id="page-up" class="btn btn-page-up" onclick="changePanel(2, 1)">
-            up
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="140" x2="200" y2="20"></line>
+                <line x1="200" y1="20" x2="390" y2="140"></line>
+            </svg>
         </button>
 
-        <h2 class="heading heading-sub">Czym się zajmuję?</h2>
-        <div class="introduction-content">
-            <p class="text-content">Buduję proste strony internetowe oraz aplikacje wykorzystując HTML, CSS, JavaScript.
-                Obecnie szukam zatrudnienia jako Front End Developer.</p>
-            <div class="lampion-container">
-                <div class="lamion-html">
+        <div class="introduction-text-content">
+            <h2 class="heading heading-sub">Czym się zajmuję?</h2>
+            <p>Buduję proste strony internetowe oraz aplikacje wykorzystując HTML, CSS, JavaScript. Obecnie szukam
+                zatrudnienia jako Front End Developer.</p>
+        </div>
 
-                    <i class="fab fa-html5"></i>
-                </div>
+        <div class="lampion-container">
+            <svg class="lampion-1" viewBox="0 0 92.388 144.603">
+                <path
+                    d="M37.377 26.368L1.305 62.438a3.592 3.592 0 000 5.092l36.184 36.183h17.41L91.084 67.53a3.592 3.592 0 000-5.091L55.012 26.368z" />
+                <path
+                    d="M36.9 106.213v7.875h4.66l-2.283 30.265h13.834l-2.283-30.265h4.66v-7.875zM46.194.25a9.087 9.087 0 00-9.087 9.087 9.087 9.087 0 002.913 6.656H36.9v7.875h18.588v-7.875h-3.124a9.087 9.087 0 002.917-6.656A9.087 9.087 0 0046.194.25zm0 4.026a5.061 5.061 0 015.062 5.06 5.061 5.061 0 01-5.062 5.062 5.061 5.061 0 01-5.061-5.061 5.061 5.061 0 015.061-5.06z" />
+            </svg>
 
-                <div class="lampion-css">
-
-                    <i class="fab fa-css3-alt"></i>
-                </div>
-
-                <svg class="lampion-js" viewBox="0 0 103.365 161.803">
-                    <path
-                        d="M122.46 152.534c1.061 20.873-7.759 31.296-7.759 31.296m2.448-31.328c-.76 20.885-10.455 30.5-10.455 30.5m6.28-30.524c-4.376 20.436-15.593 28.221-15.593 28.221m30.299-28.87c-1.062 20.871 7.757 31.295 7.757 31.295m-2.447-31.328c.76 20.885 10.455 30.5 10.455 30.5m-6.28-30.524c4.376 20.435 15.593 28.221 15.593 28.221M113.763 40.942a11.307 17.507 0 015.653-15.161 11.307 17.507 0 0111.307 0 11.307 17.507 0 015.653 15.161h-11.307zm27.05 104.274h-31.488v7.262h31.488zm-.246-104.274h-30.996v7.262h30.996zm-28.651 103.634a54.12 47.866 0 00-54.12-47.866m80.427 47.866a54.12 47.866 0 0154.12-47.866m-80.427-47.866a54.12 47.866 0 01-54.12 47.866m80.427-47.866a54.12 47.866 0 0054.12 47.866"
-                        transform="matrix(-.76824 0 0 1 147.766 -22.58)" />
-                </svg>
-            </div>
+            <svg class="lampion-2" viewBox="0 0 119.184 171.737">
+                <path
+                    d="M15.707 27.406A59.342 59.342 0 00.25 67.248a59.342 59.342 0 0015.458 39.842h87.772a59.342 59.342 0 0015.454-39.842 59.342 59.342 0 00-15.453-39.842z" />
+                <path
+                    d="M59.592.25A10.552 10.552 0 0049.04 10.802a10.552 10.552 0 003.749 8.051H15.743v6.053h87.698v-6.053h-37.03a10.552 10.552 0 003.733-8.051A10.552 10.552 0 0059.592.25zm0 4.508a6.044 6.044 0 016.044 6.044 6.044 6.044 0 01-6.044 6.044 6.044 6.044 0 01-6.044-6.044 6.044 6.044 0 016.044-6.044zM15.743 109.59v6.053h38.724l-2.529 55.844h15.308l-2.528-55.844h38.723v-6.053z" />
+            </svg>
+            <svg class="lampion-3" viewBox="0 0 83.682 148.417">
+                <g transform="translate(-58.245 -60.58)">
+                  <path d="M101.298 213.09h9.827l3.028 51.404H98.27l3.028-51.405z" transform="matrix(.89434 0 0 .89459 6.18 -27.867)"/>
+                  <path d="M100.086 60.83a9.592 9.595 0 00-9.592 9.594 9.592 9.595 0 009.592 9.594 9.592 9.595 0 009.592-9.594 9.592 9.595 0 00-9.592-9.595zm0 4.522a4.864 5.072 0 014.864 5.072 4.864 5.072 0 01-4.864 5.072 4.864 5.072 0 01-4.863-5.072 4.864 5.072 0 014.863-5.072z"/>
+                  <rect width="83.182" height="12.672" x="58.495" y="106.704" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" ry="5.499"/>
+                  <rect width="83.182" height="12.672" x="58.495" y="136.521" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" ry="5.499"/>
+                  <rect width="83.182" height="12.672" x="58.495" y="151.43" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" ry="5.499"/>
+                  <rect width="83.182" height="12.672" x="58.495" y="121.613" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" ry="5.499"/>
+                  <rect width="83.182" height="12.672" x="58.495" y="91.796" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" ry="5.499"/>
+                  <rect width="83.182" height="12.672" x="58.495" y="76.887" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" ry="5.499"/>
+                </g>
+              </svg>
         </div>
 
         <button id="page-down" class="btn btn-page-down" onclick="changePanel(2, 3)">
-            down
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="10" x2="200" y2="140"></line>
+                <line x1="200" y1="140" x2="390" y2="10"></line>
+            </svg>
         </button>
     </section>
 
-    <section id="sec-3" class="section">
+    <section id="sec-3" class="section about-me">
         <button id="page-up" class="btn btn-page-up" onclick="changePanel(3, 2)">
-            up
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="140" x2="200" y2="20"></line>
+                <line x1="200" y1="20" x2="390" y2="140"></line>
+            </svg>
         </button>
 
         <h2 class="heading heading-sub">Informacje o mnie:</h2>
@@ -116,26 +139,38 @@
         </div>
 
         <button id="page-down" class="btn btn-page-down" onclick="changePanel(3, 4)">
-            down
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="10" x2="200" y2="140"></line>
+                <line x1="200" y1="140" x2="390" y2="10"></line>
+            </svg>
         </button>
     </section>
 
-    <section id="sec-4" class="section">
+    <section id="sec-4" class="section my-projects">
         <button id="page-up" class="btn btn-page-up" onclick="changePanel(4, 3)">
-            up
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="140" x2="200" y2="20"></line>
+                <line x1="200" y1="20" x2="390" y2="140"></line>
+            </svg>
         </button>
 
         <h2 class="heading heading-sub">Co dotychczas stworzyłem?</h2>
         <p class="text-content">Color-mash, apka do Iskry, kilka generic projektów</p>
 
         <button id="page-down" class="btn btn-page-down" onclick="changePanel(4, 5)">
-            down
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="10" x2="200" y2="140"></line>
+                <line x1="200" y1="140" x2="390" y2="10"></line>
+            </svg>
         </button>
     </section>
 
-    <section id="sec-5" class="section">
+    <section id="sec-5" class="section contact">
         <button id="page-up" class="btn btn-page-up" onclick="changePanel(5, 4)">
-            up
+            <svg class="arrow" viewbox="0 0 400 150">
+                <line x1="10" y1="140" x2="200" y2="20"></line>
+                <line x1="200" y1="20" x2="390" y2="140"></line>
+            </svg>
         </button>
 
         <h2 class="heading heading-sub">Kontakt</h2>
