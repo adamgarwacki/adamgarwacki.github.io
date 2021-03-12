@@ -70,7 +70,7 @@ body {
     width: 240px;
     height: 30px;
     left: 50%;
-    transform: translateX(-120px);
+    transform: translateX(-50%);
     margin: 5px 0px;
 
     background-color: transparent;
@@ -115,14 +115,14 @@ body {
 /* Każda chmura jest grafiką svg, ułożoną później odpowiednio za pomocą poniższych reguł css;
 Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego kształtu uzywając jego wartości szerokości */
 
-.cloud-box {
+.cloud-container {
     position: absolute;
     width: 100%;
     height: 100%;
     transition: all 1s;
 }
 
-.cloud-box-split {
+.cloud-container-split {
     transform: translateX(-25%);
     width: 200%;
 }
@@ -146,7 +146,6 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 }
 
 .cloud-2 {
-    -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     width: 250px;
     right: -65px;
@@ -174,51 +173,93 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 }
 
 /* SEKCJA WSTĘP */
-
-.introduction-text-content, .lampion-container {
+.text-content, .lampion-container {
     margin-top: 80px;
 }
 
-.introduction-text-content {
+.text-content {
     padding: 0px 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* background-color: #202020; */
 }
 
-.introduction-text-content >  * {
+.text-content >  * {
     padding-bottom: 20px;
 }
 
-.introduction-text-content > .heading-sub {
+.introduction .heading-sub {
     color: #D4AF37;
 }
 
 .lampion-container {
     position: relative;
     height: 40%;
+    transition: all 0.3s;
 }
 
-.lampion-1, .lampion-2, .lampion-3 {
-    position: relative;
+.lampion-container > * {
+    position: absolute;
     width: 80px;
     stroke-width: 0.5;
     stroke: #D4AF37;
     fill: #D4AF37;
+    transition: all 0.5s;
+    animation-name: floating-lantern;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.lampion-container > *:hover{
+    filter: drop-shadow(0 0 8px #fcd248c5);
 }
 
 .lampion-1 {
-    
+    left: 10%;
+    top: 30%;
+    animation-duration: 8s;
 }
 
 .lampion-2 {
-    
+    left: 35%;
+    top: 10px;
+    animation-duration: 6s;
+}
+
+.lampion-3 {
+    left: 70%;
+    top: 15%;
+    animation-duration: 7s;
+}
+
+.lampion-fade {
+    opacity: 0;
 }
 
 
-.about-me > .heading-sub {
+.about-me .heading-sub {
     color: #5fca56;
+}
+
+.about-me > .text-content {
+    background-color: #272727aa;
+    box-shadow: 0px 0px 36px 36px #272727aa;
+    z-index: 111;
+    border-radius: 10px;
+}
+
+.fish-1, .fish-2, .fish-3 {
+    position: absolute;
+    stroke: #5fca56;
+    stroke-width: 0.5;
+    fill: #5fca56;
+}
+
+.fish-1 {
+    width: 240px;
+    
+    top: 100px;
+    animation-name: swimming-fish;
+    animation-iteration-count: infinite;
+    animation-duration: 12s;
+    animation-timing-function: linear;
 }
 
 
@@ -239,6 +280,38 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     Tutaj dodać jeszcze jeden przedział szerokości dla chmur
 } */
 
+@keyframes floating-lantern {
+    0% {
+        margin-left: 0px;
+        margin-top: -10px;
+    }
+
+    33% {
+        margin-left: -6px;
+        margin-top: 4px;
+    }
+
+    66% {
+        margin-left: 6px;
+        margin-top: 8px;
+    }
+
+    100% {
+        margin-left: 0px;
+        margin-top: -10px;
+    }
+}
+
+@keyframes swimming-fish {
+    0% {
+        left: 120%;
+    }
+
+    100% {
+        left: -240px;
+    }
+}
+
 @media (min-width: 992px) {
     .btn {
         width: 400px;
@@ -248,12 +321,62 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     .heading-main {
         font-size: 2.5em;
     }
+    .section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: unset;
+    }
+
+
+    .text-content {
+        margin-bottom: 80px;
+        width: 30%;
+        padding: 25px;
+        padding-left: 10%;
+        font-size: 1.4em;
+        text-align: justify;
+    }
+
+    .lampion-container, .fish-container {
+        width: 50%;
+        height: 60%;
+        margin: 0;
+    }
+    
+    .lampion-container > * {
+        width: 130px;
+    }
+
+    .lampion-1 {
+        left: 10%;
+        top: 320px;
+    }
+
+    .lampion-2 {
+        left: 35%;
+        top: 70px;
+    }
+
+    .lampion-3 {
+        left: 70%;
+        top: 230px;
+    }
 }
 
 @media (min-width: 1200px) {
     .btn {
         width: 600px;
         height: 75px;
+    }
+
+    .btn > svg {
+        height: 45px;
     }
 
     .cloud-1 {
@@ -268,7 +391,7 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 
     .cloud-3 {
         left: 10%;
-        width: 520px;
+        width: 530px;
     }
 
     .cloud-4 {

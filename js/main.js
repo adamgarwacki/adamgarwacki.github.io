@@ -5,12 +5,10 @@
 //  przy odświeżaniu karty strona otwierała się na złym oknie,
 //  a w większości przypadków na kilku z nich jednocześnie;
 window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-    let previousPageNum = sessionStorage.previousPageNum;
-
     let collection = document.getElementsByClassName('section');
     let allSec = Array.prototype.slice.call(collection);
 
+    let previousPageNum = sessionStorage.previousPageNum;
     if (previousPageNum) {
         
         // console.log(allSec);
@@ -170,25 +168,25 @@ myCanvas.addEventListener('click', () => {
 });
 
 // Efekt przejścia od tytułu:
-window.addEventListener('scroll', () => {
-    let scrollValue = window.pageYOffset;
-    let windowHeight = window.innerHeight;
-    let cloudBox = document.getElementById('cloud-box');
+// window.addEventListener('scroll', () => {
+//     let scrollValue = window.pageYOffset;
+//     let windowHeight = window.innerHeight;
+//     let cloudBox = document.getElementById('cloud-box');
 
-    // Zanikanie chmur:
-    let cloudOpacity = 1 - scrollValue/(windowHeight - 200);
-    if(cloudOpacity > 0) {
-        cloudBox.style.opacity = cloudOpacity;
-    } else {
-        cloudBox.style.opacity = 0;
-    }
+//     // Zanikanie chmur:
+//     let cloudOpacity = 1 - scrollValue/(windowHeight - 200);
+//     if(cloudOpacity > 0) {
+//         cloudBox.style.opacity = cloudOpacity;
+//     } else {
+//         cloudBox.style.opacity = 0;
+//     }
 
-    // Rozszerzanie się, odchylanie na boki:
-    if(scrollValue < windowHeight) {
-        cloudBox.style.width = `${window.innerWidth + scrollValue/2}px`;
-        cloudBox.style.left = `-${scrollValue/4}px`;
-    }
-});
+//     // Rozszerzanie się, odchylanie na boki:
+//     if(scrollValue < windowHeight) {
+//         cloudBox.style.width = `${window.innerWidth + scrollValue/2}px`;
+//         cloudBox.style.left = `-${scrollValue/4}px`;
+//     }
+// });
 
 // Przejścia między kartami:
 
@@ -197,39 +195,53 @@ let changePanel = (currNum, nextNum) => {
     let currentPanel = document.getElementById(`sec-${currNum}`);
     let nextPanel = document.getElementById(`sec-${nextNum}`);
 
-    if (nextNum > currNum) {
-        currentPanel.classList.add('slide-up');
-        setTimeout(() => nextPanel.classList.remove('slide-down'), 1000);
-        // console.log('neeext');
-    } else {
-        currentPanel.classList.add('slide-down');
-        setTimeout(() => nextPanel.classList.remove('slide-up'), 1000);
-        // console.log('baaack');
+    let panelSlide = () => {
+        if (nextNum > currNum) {
+            currentPanel.classList.add('slide-up');
+            setTimeout(() => nextPanel.classList.remove('slide-down'), 1000);
+            // console.log('neeext');
+        } else {
+            currentPanel.classList.add('slide-down');
+            setTimeout(() => nextPanel.classList.remove('slide-up'), 1000);
+            // console.log('baaack');
+        }
     }
 
     switch (currNum) {
         case 1:
-            let cloudBox = document.getElementById('cloud-box');
-            cloudBox.classList.add('cloud-box-split');
+            let cloudContainer = document.getElementById('cloud-container');
+            cloudContainer.classList.add('cloud-container-split');
+
+            panelSlide();
+
             setTimeout(() => {
-                cloudBox.classList.remove('cloud-box-split');
+                cloudContainer.classList.remove('cloud-container-split');
             }, 1000);
             break;
             
         case 2:
+            let lampionContainer = document.getElementById('lampion-container');
+            lampionContainer.classList.add('lampion-fade');
 
+            setTimeout(() => {
+                panelSlide();
+            }, 500);
+
+            setTimeout(() => {
+                lampionContainer.classList.remove('lampion-fade');
+            }, 1000);
             break;
             
         case 3:
-            
+            panelSlide();
             break;
             
         case 4:
-            
+            panelSlide();
             break;
             
         case 5:
-            
+            panelSlide();
             break;
 
         default:
@@ -238,3 +250,14 @@ let changePanel = (currNum, nextNum) => {
 
     sessionStorage.setItem('previousPageNum', nextNum);
 }
+
+// todo punkt 6:
+let allowScroll = true;
+window.addEventListener("wheel", event => {
+    if (allowScroll) {
+        console.info(event.deltaY);
+
+        allowScroll = false;
+        setTimeout(() => allowScroll = true, 2000);
+    }
+});
