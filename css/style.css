@@ -239,6 +239,8 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 }
 
 .about-me > .text-content {
+    margin-top: 0px;
+    margin-bottom: 80px;
     background-color: #272727aa;
     box-shadow: 0px 0px 36px 36px #272727aa;
     z-index: 111;
@@ -250,18 +252,31 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     stroke: #5fca56;
     stroke-width: 0.5;
     fill: #5fca56;
-}
-
-.fish-1 {
-    width: 240px;
-    
-    top: 100px;
-    animation-name: swimming-fish;
     animation-iteration-count: infinite;
-    animation-duration: 12s;
     animation-timing-function: linear;
 }
 
+.fish-1 {
+    width: 200px;
+    top: 150px;
+    animation-name: swimming-fish-left;
+    animation-duration: 14s;
+}
+
+.fish-2 {
+    width: 130px;
+    top: 520px;
+    animation-name: swimming-fish-left;
+    animation-duration: 23s;
+}
+
+.fish-3 {
+    width: 160px;
+    top: 360px;
+    transform: scaleX(-1);
+    animation-name: swimming-fish-right;
+    animation-duration: 20s;
+}
 
 
 .my-projects > .heading-sub {
@@ -302,13 +317,23 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     }
 }
 
-@keyframes swimming-fish {
+@keyframes swimming-fish-left {
     0% {
         left: 120%;
     }
 
     100% {
         left: -240px;
+    }
+}
+
+@keyframes swimming-fish-right {
+    0% {
+        right: 120%;
+    }
+
+    100% {
+        right: -240px;
     }
 }
 
@@ -337,8 +362,8 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     .text-content {
         margin-bottom: 80px;
         width: 30%;
-        padding: 25px;
-        padding-left: 10%;
+        padding: 10%;
+        padding-left: 15%;
         font-size: 1.4em;
         text-align: justify;
     }
@@ -366,6 +391,18 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     .lampion-3 {
         left: 70%;
         top: 230px;
+    }
+
+    .fish-1 {
+        width: 400px;
+    }
+    
+    .fish-2 {
+        width: 260px;
+    }
+    
+    .fish-3 {
+        width: 320px;
     }
 }
 
