@@ -156,6 +156,13 @@ let transformImage = (x, y, rad) => {
 
 transformImage(0, -anchorRadius, 0);
 drawDot();
+
+
+
+// dwie wersje rozkładania się wachlarza: po kliknięciu (nieaktywne) / po ustalonym czasie;
+
+// ------------------------------
+
 myCanvas.addEventListener('click', () => {
     draw();
     setTimeout(() => {
@@ -166,6 +173,20 @@ myCanvas.addEventListener('click', () => {
         }, 500);
     }, 800);
 });
+
+// setTimeout(() => {
+//     draw();
+//     setTimeout(() => {
+//         let canvasContainer = document.getElementById('loading-screen');
+//         canvasContainer.classList.add('vanish');
+//         setTimeout(() => {
+//             canvasContainer.style.display = 'none';
+//         }, 500);
+//     }, 800);
+// }, 300);
+
+// ----------------------------------
+
 
 // Efekt przejścia od tytułu:
 // window.addEventListener('scroll', () => {
