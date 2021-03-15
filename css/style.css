@@ -20,7 +20,7 @@ body {
 
     cursor: pointer;
     background-color: #272727;
-    z-index: 111111;
+    z-index: 1111111111;
     transition: all 0.5s;
 }
 
@@ -52,9 +52,13 @@ body {
     transform: translateY(100%);
 }
 
-.heading {
-    font-family: 'Merienda', cursive;
+h1, h2, h3, p {
+    padding: 10px;
     text-align: center;
+}
+
+.heading {
+    font-family: 'Courgette', cursive;
 }
 
 .heading-main {
@@ -72,6 +76,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     margin: 5px 0px;
+    z-index: 1111111;
 
     background-color: transparent;
     border: none;
@@ -173,8 +178,8 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 }
 
 /* SEKCJA WSTĘP */
-.text-content, .lampion-container {
-    margin-top: 80px;
+.text-content {
+    margin-top: 50px;
 }
 
 .text-content {
@@ -240,11 +245,19 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 
 .about-me > .text-content {
     margin-top: 0px;
-    margin-bottom: 80px;
     background-color: #272727aa;
     box-shadow: 0px 0px 36px 36px #272727aa;
     z-index: 111;
     border-radius: 10px;
+
+}
+
+.about-me h3 {
+    font-size: 1em;
+}
+
+.about-me p {
+    font-size: 0.8em;
 }
 
 .fish-1, .fish-2, .fish-3 {
@@ -279,15 +292,37 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 }
 
 
-.my-projects > .heading-sub {
+.my-projects .heading-sub {
     color: #d64a4a;
 }
 
+.card-container {
+    padding: 0px 25px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    height: 300px;
+    width: 210px;
+    margin: 10px;
+}
+
+.card > * {
+    fill: #d64a4a;
+    stroke-width: 10px;
+    stroke-linecap: round;
+    stroke: #272727;
+}
 
 
 .contact > .heading-sub {
     color: #439ed3;
 }
+
+
 
 /* RWD */
 
@@ -319,21 +354,21 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
 
 @keyframes swimming-fish-left {
     0% {
-        left: 120%;
+        left: 125%;
     }
 
     100% {
-        left: -240px;
+        left: -400px;
     }
 }
 
 @keyframes swimming-fish-right {
     0% {
-        right: 120%;
+        right: 125%;
     }
 
     100% {
-        right: -240px;
+        right: -400px;
     }
 }
 
@@ -346,6 +381,7 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
     .heading-main {
         font-size: 2.5em;
     }
+
     .section {
         flex-direction: row;
         align-items: center;
@@ -358,19 +394,20 @@ Ponieważ każda z nich ma ustawiony viewbox można zmieniać rozmiar każdego k
         align-items: unset;
     }
 
+    .text-content, .lampion-container, .fish-container, .card-container {
+        box-sizing: border-box;
+        width: 50%;
+        max-width: 600px;
+    }
 
     .text-content {
-        margin-bottom: 80px;
-        width: 30%;
-        padding: 10%;
-        padding-left: 15%;
+        margin-bottom: 40px;
         font-size: 1.4em;
-        text-align: justify;
     }
 
     .lampion-container, .fish-container {
-        width: 50%;
         height: 60%;
+        margin-left: 10%;
         margin: 0;
     }
     
