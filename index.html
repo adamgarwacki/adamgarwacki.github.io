@@ -247,11 +247,11 @@
             <p>Skontaktuj się ze mną:</p>
 
             <form id="contact-form" class="contact-form" action="https://formspree.io/f/xbjqraaj" method="POST">
-                <input type="text" name="name" id="form-name" placeholder="Imię..." autocomplete="off">
+                <input type="text" name="name" id="form-name" placeholder="Imię..." autocomplete="off" required>
 
-                <input type="email" name="email" id="form-email" placeholder="Adres e-mail..." autocomplete="off">
+                <input type="email" name="email" id="form-email" placeholder="Adres e-mail..." autocomplete="off" required>
 
-                <textarea name="message" id="form-message" cols="30" rows="10" placeholder="Wiadomość..."></textarea>
+                <textarea name="message" id="form-message" cols="30" rows="10" placeholder="Wiadomość..." required></textarea>
 
                 <button type="submit" class="form-submit">Wyślij</button>
             </form>
