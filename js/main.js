@@ -272,6 +272,15 @@ let changePanel = (currNum, nextNum) => {
     sessionStorage.setItem('previousPageNum', nextNum);
 }
 
+// formularz:
+let contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', (e) => {
+    // e.preventDefault();
+    contactForm.reset();
+});
+
+
+
 // todo punkt 6:
 let allowScroll = true;
 window.addEventListener("wheel", event => {
