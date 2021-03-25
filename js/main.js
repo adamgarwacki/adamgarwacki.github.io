@@ -275,7 +275,11 @@ let changePanel = (currNum, nextNum) => {
 // formularz:
 let contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
+<<<<<<< HEAD
     // e.preventDefault();
+=======
+    e.preventDefault();
+>>>>>>> b31ca0f318afc05fbc5ed9356a9d4385d3a4bb43
     contactForm.reset();
 });
 
