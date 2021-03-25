@@ -276,6 +276,7 @@ let changePanel = (currNum, nextNum) => {
 let contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
     // e.preventDefault();
+    e.preventDefault();
     contactForm.reset();
 });
 
