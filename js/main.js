@@ -4,11 +4,13 @@
 //  było to konieczne, ponieważ z niestety nieznanych mi przyczyn
 //  przy odświeżaniu karty strona otwierała się na złym oknie,
 //  a w większości przypadków na kilku z nich jednocześnie;
+
+let previousPageNum;
 window.addEventListener('load', () => {
     let collection = document.getElementsByClassName('section');
     let allSec = Array.prototype.slice.call(collection);
 
-    let previousPageNum = sessionStorage.previousPageNum;
+    previousPageNum = sessionStorage.previousPageNum;
     if (previousPageNum) {
         
         // console.log(allSec);
@@ -20,6 +22,7 @@ window.addEventListener('load', () => {
             }
         };
     } else {
+        previousPageNum = 1;
         for (let el of allSec.slice(1, 5)) {
             el.classList.add('slide-down');
         }
@@ -188,26 +191,6 @@ myCanvas.addEventListener('click', () => {
 // ----------------------------------
 
 
-// Efekt przejścia od tytułu:
-// window.addEventListener('scroll', () => {
-//     let scrollValue = window.pageYOffset;
-//     let windowHeight = window.innerHeight;
-//     let cloudBox = document.getElementById('cloud-box');
-
-//     // Zanikanie chmur:
-//     let cloudOpacity = 1 - scrollValue/(windowHeight - 200);
-//     if(cloudOpacity > 0) {
-//         cloudBox.style.opacity = cloudOpacity;
-//     } else {
-//         cloudBox.style.opacity = 0;
-//     }
-
-//     // Rozszerzanie się, odchylanie na boki:
-//     if(scrollValue < windowHeight) {
-//         cloudBox.style.width = `${window.innerWidth + scrollValue/2}px`;
-//         cloudBox.style.left = `-${scrollValue/4}px`;
-//     }
-// });
 
 // Przejścia między kartami:
 
@@ -271,16 +254,6 @@ let changePanel = (currNum, nextNum) => {
 
     sessionStorage.setItem('previousPageNum', nextNum);
 }
-
-// formularz:
-let contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', (e) => {
-    // e.preventDefault();
-    e.preventDefault();
-    contactForm.reset();
-});
-
-
 
 // todo punkt 6:
 let allowScroll = true;
